@@ -120,4 +120,4 @@
                       :access-control-allow-credentials ["true"])))
 
 (defn -main []
-  (server/run-server handler {:port 2222}))
+  (server/run-server handler {:port 80}))
