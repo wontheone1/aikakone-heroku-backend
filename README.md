@@ -1,39 +1,32 @@
+# Aikakone backend part
 
-# clojure-getting-started
+Puzzle game using finna api. This game consists of frontend and backend part.
+This repo is the backend part. Frontend is being developed in [another repo](https://github.com/wontheone1/aikakone).
 
-A barebones Clojure app, which can easily be deployed to Heroku.  
+## Running
 
-This application support the [Getting Started with Clojure](https://devcenter.heroku.com/articles/getting-started-with-clojure) article - check it out.
+* Inside REPL
 
-## Running Locally
-
-Make sure you have Clojure installed.  Also, install the [Heroku Toolbelt](https://toolbelt.heroku.com/).
-
-```sh
-$ git clone https://github.com/heroku/clojure-getting-started.git
-$ cd clojure-getting-started
-$ lein repl
-user=> (require 'clojure-getting-started.web)
-user=>(def server (clojure-getting-started.web/-main))
+```clj
+(start-server)
 ```
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
+* In the terminal
+
+```sh
+$ lein run
+```
 
 ## Deploying to Heroku
 
 ```sh
-$ heroku create
+$ heroku create aikakone-backend
 $ git push heroku master
+$ heroku ps:scale web=1
 $ heroku open
+$ heroku logs --tail
 ```
 
 or
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-## Documentation
-
-For more information about using Clojure on Heroku, see these Dev Center articles:
-
-- [Clojure on Heroku](https://devcenter.heroku.com/categories/clojure)
-
