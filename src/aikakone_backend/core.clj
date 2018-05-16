@@ -8,7 +8,7 @@
             [ring.middleware.cors :as cors]
             [taoensso.sente :as sente]
             [taoensso.sente.server-adapters.http-kit :refer (get-sch-adapter)]
-            ))
+            [environ.core :refer [env]]))
 
 
 (let [{:keys [ch-recv send-fn connected-uids
@@ -119,5 +119,6 @@
                       :access-control-allow-methods [:get :put :post :delete]
                       :access-control-allow-credentials ["true"])))
 
-(defn -main []
-  (server/run-server handler {:port 80}))
+(defn -main [& [port]]
+  (let [port (Integer. (or port (env :port) 2222))]
+    (server/run-server handler {:port port :join? false})))
