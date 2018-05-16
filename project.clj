@@ -10,7 +10,5 @@
                  [ring/ring-defaults "0.2.0"]
                  [ring-cors "0.1.7"]]
   :min-lein-version "2.0.0"
-  :plugins [[environ/environ.lein "0.3.1"]]
-  :hooks [environ.leiningen.hooks]
   :uberjar-name "aikakone-backend.jar"
   :profiles {:production {:env {:production true}}})
